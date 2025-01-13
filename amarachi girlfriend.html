@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amarachi, Will You Be My Girlfriend?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .buttons {
+            position: relative;
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #yes:hover {
+            background-color: #45a049;
+        }
+
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Amarachi, Will You Be My Girlfriend? ❤</h1>
+    <p>Hey Amarachi, it's me, Femi. I just wanted to let you know how amazing you are and how much you mean to me. Will you make me the happiest guy ever by being my girlfriend?</p>
+    <div class="buttons">
+        <button id="yes" onclick="handleYes()">Yes</button>
+        <button id="no" onmouseover="moveNo()">No</button>
+    </div>
+
+    <script>
+        function handleYes() {
+            alert("Yay! Amarachi, you just made my day! 🥰");
+            document.body.innerHTML = "<h1>Thank you for saying yes, Amarachi! 💕</h1><p>I promise to always make you smile and cherish every moment with you!</p>";
+        }
+
+        function moveNo() {
+            const noButton = document.getElementById("no");
+            const randomX = Math.floor(Math.random() * 300) - 150; // Random horizontal movement
+            const randomY = Math.floor(Math.random() * 300) - 150; // Random vertical movement
+
+            // Ensure the button doesn't go off-screen
+            const newLeft = Math.min(window.innerWidth - 100, Math.max(0, noButton.offsetLeft + randomX));
+            const newTop = Math.min(window.innerHeight - 50, Math.max(0, noButton.offsetTop + randomY));
+
+            noButton.style.left = newLeft + "px";
+            noButton.style.top = newTop + "px";
+        }
+    </script>
+</body>
+</html>
